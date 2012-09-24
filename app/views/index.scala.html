@@ -1,7 +1,11 @@
 @(message: String)
 
-@main("Welcome to Play 2.0") {
+@main("UniSearch - Find your stuff... faster") {
     
-    @play20.welcome(message)
+	<form name="formSearch" action="/search" method="GET">
+		<div align="center">
+		    <input name="query" type="text"  size="40" value="Search..." >
+            <input type="submit" value="Search" />
+	    </div>
     
 }
