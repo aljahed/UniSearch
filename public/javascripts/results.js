@@ -5,25 +5,27 @@ $(function() {
 	$container.isotope({
 		itemSelector : '.element',
 		getSortData : {
-			symbol : function($elem) {
-				return $elem.attr('data-symbol');
+			resultType : function($elem) {
+				return $elem.attr('data-resultType');
 			},
-			category : function($elem) {
-				return $elem.attr('data-category');
-			},
-			number : function($elem) {
-				return parseInt($elem.find('.number').text(), 10);
-			},
-			weight : function($elem) {
-				return parseFloat($elem.find('.weight').text().replace(
-						/[\(\)]/g, ''));
+			ranking : function($elem) {
+				return parseInt($elem.find('.ranking').text(), 10);
 			},
 			name : function($elem) {
 				return $elem.find('.name').text();
 			}
 		}
 	});
+	
+	var $sortBy = $('#sort-by');
+	$('#shuffle a').click(function() {
+		$container.isotope('shuffle');
+		$sortBy.find('.selected').removeClass('selected');
+		$sortBy.find('[data-option-value="random"]').addClass('selected');
+		return false;
+	});
 
+	// Optionset
 	var $optionSets = $('#options .option-set'), $optionLinks = $optionSets
 			.find('a');
 
@@ -61,14 +63,6 @@ $(function() {
 	$container.delegate('.element', 'click', function() {
 		$(this).toggleClass('large');
 		$container.isotope('reLayout');
-	});
-
-	var $sortBy = $('#sort-by');
-	$('#shuffle a').click(function() {
-		$container.isotope('shuffle');
-		$sortBy.find('.selected').removeClass('selected');
-		$sortBy.find('[data-option-value="random"]').addClass('selected');
-		return false;
 	});
 
 });

@@ -93,8 +93,8 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
   font-size: 13px;
   line-height: 1.7em;
-  background: #1F1E1D;
-  color: #FFF;
+  background: #e8ffdf;
+  color: #2e3436;
 }
 
 h1, h2, h3, p, ul, ol, pre, dl {
@@ -124,19 +124,19 @@ ul, ol {
 
 a,
 a code {
-  color: #FB4;
+  color: #2e3436;
   text-decoration: none;
 }
 
 a:hover,
 a:hover code { 
-  color: #4BF; 
+  color: #2e3436; 
 }
 
 a:active,
 a:active code {
-  color: #1FB;
-  background: black;
+  color: #2e3436;
+  background: #8ae234;
 }
 
 a img { border: none; }
@@ -190,6 +190,16 @@ body {
 .element.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
 .element.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
 
+.element.script          { background: #F00; background: hsl(   0, 100%, 50%); }
+.element.tutorial        { background: #F80; background: hsl(  36, 100%, 50%); }
+.element.top15      { background: #FF0; background: hsl(  72, 100%, 50%); }
+.element.top20      { background: #0F0; background: hsl( 108, 100%, 50%); }
+.element.top25      { background: #0F8; background: hsl( 144, 100%, 50%); }
+.element.top35      { background: #0FF; background: hsl( 180, 100%, 50%); }
+.element.top40      { background: #08F; background: hsl( 216, 100%, 50%); }
+.element.top45      { background: #00F; background: hsl( 252, 100%, 50%); }
+.element.other      { background: #F0F; background: hsl( 288, 100%, 50%); }
+
 
 .element * {
   position: absolute;
@@ -223,7 +233,13 @@ body {
   bottom: 0.5em;
 }
 
-.element .number {
+.element .source {
+  font-size: 0.9em;
+  left: 0.5em;
+  bottom: 0.5em;
+}
+
+.element .ranking {
   font-size: 1.25em;
   font-weight: bold;
   color: hsla(0,0%,0%,.5);
