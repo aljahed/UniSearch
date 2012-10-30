@@ -6,7 +6,7 @@
 @displayElement(result: models.SearchResult) = {
 	<div class="element @result.resultType" data-resultType="@result.resultType">
 		<p class="ranking">@result.ranking</p>
-		<h3 class="symbol">H</h3>
+		<h3 class="department">@result.department</h3>
 		<h2 class="name">@result.name</h2>
 		<p class="source"><a class="source a" href="@result.url">Link</a></p>
 	</div>
@@ -29,8 +29,7 @@
     <h3>Sort</h3>
 
     <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
-		<li><a href="#sortBy=original-order" data-option-value="original-order" class="selected" data>original-order</a></li>
- 		<li><a href="#sortBy=ranking" data-option-value="ranking">ranking</a></li>
+ 		<li><a href="#sortBy=ranking" data-option-value="ranking" class="selected">ranking</a></li>
 		<li><a href="#sortBy=resultType" data-option-value="resultType">category</a></li>
     </ul>
 

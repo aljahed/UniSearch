@@ -1,5 +1,7 @@
 package models
 import java.net.URL
+import scala.util.matching.Regex
+import java.util.regex.Pattern
 
 /**
  * Base trait for search results. Will need some more love
@@ -27,6 +29,13 @@ trait SearchResult {
    * @return name of the result
    */
   def name: String = url.getPath.substring(url.getPath.lastIndexOf("/")+1).replaceAll("\\.\\w{0,3}$", "")
+  
+  /**
+   * Default implementation takes fist subdomain. e.g www.tcs.ifi.lmu.de will return tcs
+   * 
+   * @return department to which this document belongs
+   */
+  def department: String = url.getHost.replaceFirst("^www.", "").replaceFirst("\\.(.*)", "");
 
   /**
    * //TODO maybe better to implement this in each subclass
@@ -38,6 +47,10 @@ trait SearchResult {
     case TutorialResult(_,_) => "tutorial"
     case OtherResult(_,_) => "other"
   }
+}
+
+object SearchResult {
+  val DEPARMENT = new Regex("")
 }
 
 case class ScriptResult(val url: URL, val ranking: Int) extends SearchResult
