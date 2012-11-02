@@ -215,7 +215,7 @@ body {
 }
 
 .element.large .department {
-  font-size: 2.0em;
+  font-size: 1.8em;
 }
 
 .element .name {
@@ -229,6 +229,9 @@ body {
 }
 .element.large .description {
   display: block;
+  left: 0.5em;
+  top: 2.3em;
+  font-size: 1.55em;
 }
 
 
@@ -263,7 +266,7 @@ body {
 .element.large,
 .variable-sizes .element.large,
 .variable-sizes .element.large.width2.height2 {
-  font-size: 3.0em;
+  font-size: 1.2em;
   width: 350px;
   height: 350px;
   z-index: 100;
