@@ -224,6 +224,14 @@ body {
   font-size: 1.55em;
 }
 
+.element .description {
+  display: none;
+}
+.element.large .description {
+  display: block;
+}
+
+
 .element .weight {
   font-size: 0.9em;
   left: 0.5em;
