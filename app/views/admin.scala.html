@@ -7,13 +7,46 @@
 
 @main("UniSearch - Adminpage") {
     
-    @helper.form(action = routes.Admin.submit) {
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Recent Scripts</li>
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Recent Tutorials</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Recent Tests</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+            <div class="page-header">
+                <h2>Add Document</h2>
+            </div>
+            <div class="span3">
+            @helper.form(action = routes.Admin.submit) {
             @helper.inputText(myForm("title"))
             @helper.inputText(myForm("department"))
             @helper.inputText(myForm("link"))
             @helper.inputText(myForm("tags"))
             <input type="submit" value=" Submit ">
             <input type="reset" value=" Reset">
-    }
+            }
+            </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
     
 }
