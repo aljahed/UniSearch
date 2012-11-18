@@ -14,7 +14,7 @@
 }
 
 @main("UniSearch - Results") {
-    
+  <div class="container">
   <section id="options" class="clearfix">
 
   
@@ -37,10 +37,10 @@
 
   </section> <!-- #options -->
   
-    <div id="container">
+    <div id="container" style="border: none;">
 
 	@for(result <- results) {
 		@displayElement(result)
 	}
-
+  </div class="container">
 }
