@@ -12,8 +12,10 @@
         <meta name="author" content="Muki, Tidel">
 
         <!-- Le styles -->
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/bootstrap.min.css")" />
-        <!-- <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap/bootstrap.css")" > -->
+        @minified=@{ if (play.Play.isProd()) ".min" else "" }
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap/bootstrap"+ minified + ".css")">
+        <!-- <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap/responsive"+ minified + ".css")"> -->
+
         <style>
               body {
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
