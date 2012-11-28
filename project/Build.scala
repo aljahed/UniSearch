@@ -9,7 +9,8 @@ object ApplicationBuild extends Build {
 
  
   val appDependencies = Seq(
-    "se.radley" %% "play-plugins-salat" % "1.1")
+    "se.radley" %% "play-plugins-salat" % "1.1",
+    "org.scalatest" %% "scalatest" % "1.8" % "test")
 
   // Only compile the bootstrap bootstrap.less file and any other *.less file in the stylesheets directory
   def customLessEntryPoints(base: File): PathFinder = (
@@ -22,6 +23,7 @@ object ApplicationBuild extends Build {
     templatesImport += "models._",
     routesImport += "se.radley.plugin.salat.Binders._",
     templatesImport += "org.bson.types.ObjectId",
-    lessEntryPoints <<= baseDirectory(customLessEntryPoints))
+    lessEntryPoints <<= baseDirectory(customLessEntryPoints),
+    testOptions in Test := Nil)
 
 }
