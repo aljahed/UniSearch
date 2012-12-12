@@ -1,6 +1,5 @@
 package engine.crawl
 
-import models.Document
 import scala.io.Source
 import scala.xml._
 

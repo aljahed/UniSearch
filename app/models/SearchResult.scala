@@ -4,6 +4,8 @@ import scala.util.matching.Regex
 import java.util.regex.Pattern
 
 /**
+ * FIXME this should be identical to the db models
+ * 
  * Base trait for search results. Will need some more love
  * and methods.
  *

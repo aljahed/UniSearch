@@ -1,4 +1,4 @@
-@(myForm: Form[models.Document])
+@(myForm: Form[models.Script])
 
 @*********************
  * Fieldconstructor from twitterBootstrap
@@ -33,13 +33,14 @@
         </div><!--/span-->
         <div class="span9">
             <div class="page-header">
-                <h2>Add Document</h2>
+                <h2>Add Script</h2>
             </div>
             <div class="span3">
             @helper.form(action = routes.Admin.submit) {
             @helper.inputText(myForm("title"))
             @helper.inputText(myForm("department"))
             @helper.inputText(myForm("link"))
+            @helper.inputText(myForm("release"))
             @helper.inputText(myForm("tags"))
             <input type="submit" value=" Submit ">
             <input type="reset" value=" Reset">
@@ -47,6 +48,7 @@
             </div>
         </div><!--/span-->
       </div><!--/row-->
+    </div><!--/container-fluid -->
 
     
 }

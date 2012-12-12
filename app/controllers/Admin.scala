@@ -7,11 +7,11 @@ import models._
 object Admin extends Controller {
 
   def index = Action  {
-    Ok(views.html.admin(Document.form))
+    Ok(views.html.admin(Script.form))
   }
   
   def submit = Action {
-    Ok(views.html.admin(Document.form))
+    Ok(views.html.admin(Script.form))
   }
   
 }
