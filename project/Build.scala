@@ -7,10 +7,16 @@ object ApplicationBuild extends Build {
   val appName = "UniSearch"
   val appVersion = "1.0-SNAPSHOT"
 
+  // dependencies
+  //val html5parser = "nu.validator.htmlparser" % "htmlparser" % "1.4"
+  val tagsoup = "org.ccil.cowan.tagsoup" % "tagsoup" % "1.2.1"
+  val scalatest =  "org.scalatest" %% "scalatest" % "1.8" % "test"
+  val mongodbConnector = "se.radley" %% "play-plugins-salat" % "1.1"
  
   val appDependencies = Seq(
-    "se.radley" %% "play-plugins-salat" % "1.1",
-    "org.scalatest" %% "scalatest" % "1.8" % "test")
+    mongodbConnector,
+    scalatest,
+    tagsoup)
 
   // Only compile the bootstrap bootstrap.less file and any other *.less file in the stylesheets directory
   def customLessEntryPoints(base: File): PathFinder = (
@@ -25,5 +31,6 @@ object ApplicationBuild extends Build {
     templatesImport += "org.bson.types.ObjectId",
     lessEntryPoints <<= baseDirectory(customLessEntryPoints),
     testOptions in Test := Nil)
+    
 
 }
